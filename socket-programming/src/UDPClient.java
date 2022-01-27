@@ -14,7 +14,7 @@ public class UDPClient {
         InetAddress ip = InetAddress.getLocalHost();
         DatagramPacket dprequest = new DatagramPacket(requestbytes,requestbytes.length,ip,5000);
         socket.send(dprequest);
-//receive response
+//receive the response
         byte[] buffer = new byte[1024];
         DatagramPacket dpresponse = new DatagramPacket(buffer, buffer.length);
         socket.receive(dpresponse);
