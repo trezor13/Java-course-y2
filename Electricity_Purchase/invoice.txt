@@ -1,0 +1,5 @@
+   names          : adsf
+   Today's date  : Sat Jan 01 00:00:00 PST 2000
+   category      : health_facilities
+   meter number      : 234
+   Price          : 1005.0

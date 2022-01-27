@@ -1,0 +1,5 @@
+   names          : Niyigena tresor
+   check-in date  : Tue Feb 01 00:00:00 PST 2000
+   check-out date : Thu Feb 03 00:00:00 PST 2000
+   car type       : COUPE
+   Price          : 26665.8
