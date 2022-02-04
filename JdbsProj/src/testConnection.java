@@ -1,22 +1,41 @@
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import javax.xml.transform.Result;
+import java.sql.*;
 
-public class testConnection {
-   static String url = "jdbc:mysql://localhost:3306/advanced";
-   static String username = "root";
-   static String password = "fearthebeard#13";
+public class testConnection{
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-    public static void main(String[] args)throws IOException {
-        try{
-            Connection connect = DriverManager.getConnection(url,username,password);
-            if (connect != null){
-                System.out.println("connected to mysql succesfully");
-            }else{
-                System.out.println("failed to connect");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/advanced" , "root" , "fearthebeard#13");
+        Statement stmt;
+        if (conn != null) {
+            System.out.println("Succesfully connected");
+
+            stmt = conn.createStatement();
+     //       stmt.execute("Create table testing(id INT PRIMARY KEY AUTO_INCREMENT,firstName VARCHAR(255),lastName Varchar(255));");
+
+           if(stmt.execute("Insert into testing(firstName,lastName) VALUES('jackson','ville');")){
+               System.out.println("Worked successfully");
+          }
+
+
+            ResultSet result = stmt.executeQuery("select * from testing");
+            //    while(result.next()){
+            //  System.out.println(result.getInt(1) + " " + result.getString(2) + " " + result.getString(3));
+            //   System.out.println(result.getInt("id") + " " + result.getString("firstName") + " " + result.getString("lastName"));
+
+//             int id = result.getInt("id");
+//             String fname = result.getString("firstName");
+//             String lname = result.getString("lastName");
+//             System.out.format("%s, %s, %s",id,fname,lname);
+//             System.out.println("\n");
         }
+
+//            else{
+//                System.out.println("didn't work");
+//            }
+
+        else{
+            System.out.println("The db can't connect");
+        }
+
     }
 }
