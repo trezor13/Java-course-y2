@@ -28,12 +28,12 @@ public class Executor extends Thread {
 
     }
 
-    public void start() {
-        if (t == null) {
-            t = new Thread(this);
-            t.start();
+       public void start() {
+            if (t == null) {
+                t = new Thread(this);
+                t.start();
+            }
         }
-    }
 
 
 }
