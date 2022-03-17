@@ -4,7 +4,7 @@ import java.sql.*;
 public class testConnection{
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/advanced" , "root" , "fearthebeard#13");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/advanced" , "root" , "**********");
         Statement stmt;
         if (conn != null) {
             System.out.println("Succesfully connected");
